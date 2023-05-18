@@ -17,7 +17,8 @@
 
   font-size: 62.5%;
   --fs-body: 1.6rem;
-  --fs-heading: 4rem;
+  --fs-heading: clamp(4rem, 1rem + 5vw, 5.6rem);
+  --fs-heading-sm: clamp(3rem, 0.5rem + 3vw, 4rem);
 }
 
 body {
@@ -86,6 +87,7 @@ main {
 .card img {
   height: 41.6rem;
   object-fit: cover;
+  filter: brightness(0.5);
 
   border-radius: 6px;
 
@@ -102,7 +104,7 @@ main {
   bottom: 5.2rem;
   left: 2.8rem;
 
-  font-size: 4rem;
+  font-size: var(--fs-heading-sm);
   font-weight: 800;
 
   display: flex;
@@ -149,10 +151,6 @@ main {
 }
 
 @media (min-width: 700px) {
-  :root {
-    --fs-heading: 5.6rem
-  }
-
   .page {
     max-width: 117rem;
     padding: 0 5rem;
